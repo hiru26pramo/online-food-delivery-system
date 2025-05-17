@@ -1,0 +1,215 @@
+.header{
+  display: flex;
+  gap:15px ;
+  justify-content: right;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.body{
+  background-color: black;
+}
+
+.dots{
+ display: flex;
+ flex-direction: row;
+ gap: 10px;
+ position: absolute;
+ bottom: 10px;
+ align-items: center;
+ justify-content: center;
+ margin-left: 400px;
+}
+.background_image_box{
+  position: relative;
+  height: 500px;         /* Set a fixed height */
+  width: 100vw;          /* Match the image width */
+  overflow: hidden;      /* Hide the extra images */
+}
+  
+
+
+
+.dot{
+  color: white;
+  
+  
+}
+
+.dot_image{
+  height: 30px;
+}
+
+.image_with_dots{
+  
+  
+  display: flex;
+  gap: 50px;
+}
+
+.add_to_cart{
+height: 40px;
+justify-content: center;
+
+}
+
+.cart_name{
+color: white;
+display: flex;
+font-size: 20px;
+transition:  color 0.75s ease-out, font-size 0.75s ease-out ;
+}
+
+.cart_name:hover{
+ color: red;
+ font-size: 25px;
+ transform: scale(1.1);
+ 
+}
+
+.background_image{
+ 
+  left: 0;
+  width: 100vw;
+  height: 500px;
+  object-fit: cover;
+
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  gap: 150px;
+  height: 80px;
+  
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+}
+/*
+.item_button_box{
+  position: fixed;
+}
+
+.item_button_box:hover {
+  transform: scale(1.1); /* zoom effect 
+}*/
+
+.item_button_box {
+  transition: transform 0.3s ease;
+}
+
+
+.item_button_box:hover {
+  transform: scale(1.1); /* zoom on hover */
+}
+
+
+.button{
+  border:none ;
+  width: 100px;
+  height: 40px;
+  border-radius: 30px;
+  position: relative;
+  transition: transform 0.5s ease, background-color 0.5s, color 0.5s;
+}
+
+.button:hover{
+  background-color: red;
+  color: white;
+  /*width:120px;
+  height: 50px;*/
+  transform: scale(1.2);
+}
+
+.image_container{
+  display:flex;
+  flex-direction: row;
+  gap: 50px;
+  
+}
+
+
+
+.pizza_images{
+  height: 500px;
+  
+  
+  
+}
+
+.pizza_image_box{
+
+  display: flex;
+  flex-direction: column;
+  column-gap:10px ;
+ /* position: relative; this is written
+  height: 500px;         /* Set a fixed height 
+  width: 100vw;          /* Match the image width 
+  overflow: hidden; /* this is written*/
+
+
+}
+
+.pizza_name{
+  color: white;
+  font-size: 20px;
+  margin-left:70px ;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  justify-content: center;
+}
+
+.order_button{
+
+  height: 40px;
+  width: 100px;
+  position: absolute;
+  border-radius: 20px;
+  transition: transform 0.5s ease, background-color 0.5s, color 0.5s;
+  border:none;
+}
+
+.order_button:hover{
+ color: white;
+ background-color: red;
+ transform: scale(1.2);
+}
+
+  .order_button_box{
+    margin-left: 150px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .final_box{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+                   /* these two are written*/
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 0;
+  }
+  
+  .slide.active {
+    opacity: 1;
+    z-index: 1;
+  }
+
+
+
+
+
+
