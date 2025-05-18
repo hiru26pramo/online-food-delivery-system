@@ -4,6 +4,17 @@
   
   
 }
+
+#navbarNav{
+      display: flex;
+      justify-content: flex-end;
+      background-color: black;
+    }
+
+.navbar {
+      background-color: black !important;
+      border-bottom: 1px solid #000000;
+    }
 .product-image{
   width: 100px;
   height: 100px;
