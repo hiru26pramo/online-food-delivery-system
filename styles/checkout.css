@@ -27,11 +27,15 @@
    background-color: rgba(31, 30, 30, 0.911);
    
 }
+.checkout-grid{
+  padding: 50px;
+}
 
 .order-summary-title{
   margin-bottom: 0;
-  margin-left: 20px;
+  margin-left: 30px;
   font-weight: bold;
+  font-size: 20px;
 }
 .product-details{
   color: white
@@ -51,6 +55,7 @@
   display: grid;
   grid-template-columns: 100px 3fr 100px 100px;
   padding: 50px;
+  border: 1px solid #f53939;
   background-color: rgba(17, 15, 15, 0.678);
   border-radius: 10px;
   grid-column-start: auto;
@@ -59,26 +64,24 @@
 }
 
 .payment-method{
-  /* position: absolute;  */
-  top: 5000px; 
+  top: 500px; 
   left: 878px; 
   width: 352px; 
   height: 605px; 
-  background: rgba(30, 33, 40, 0.753); /* neutral-800 */
-  border-radius: 12px; /* border-xl */
+  background: rgba(30, 33, 40, 0.753);
+  border-radius: 12px; 
   border-width: 1px; 
-  border-color: #FF0000FF; /* primary-500 */
+  border-color: #FF0000FF; 
   border-style: solid; 
 }
 
 .text{
-  /* position: absolute;  */
   top: 28px; 
   left: 28px;
   font-size: 20px; 
   line-height: 30px; 
   font-weight: 700; 
-  color: #FFFFFFFF; /* white */
+  color: #FFFFFFFF; 
 }
 
 .change-payment-method {
@@ -97,6 +100,7 @@
   width: 807px; 
   height: 378px;  */
   border-radius: 10px;
+  border: 1px solid #f53939;
   padding: 20px;
   background: rgba(0, 0, 0, 0.466); 
 }
@@ -266,7 +270,6 @@ input[type="tel"] {
   padding: 10px;
   font-size: 1rem;
   border-radius: 8px;
-  border: 1px solid #d14141;
   -sizing: border-box;
 }
 .checkbox-group {
