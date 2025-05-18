@@ -1,9 +1,18 @@
+body{
+  color: white;
+  background-color: black;
+}
 .product-image{
   width: 100px;
   height: 100px;
   border-radius: 0px;
 }
 
+.container{
+  padding: 20px;
+   background-color: rgb(15, 12, 12);
+   
+}
 /*
   grid-template-columns: 1fr 350px;
   column-gap: 12px;
@@ -18,9 +27,21 @@
   column-gap: 25px;
 } */
 
+.order-summary-title{
+  margin-bottom: 0;
+  margin-left: 20px;
+  font-weight: bold;
+}
+.product-details{
+  color: white;
+}
+
+.quantity-label{
+  color: rgb(255, 0, 0);
+}
 .checkout-grid{
   display: grid;
-  grid-template-columns: 1fr 400px;
+  grid-template-columns: 1fr 100px;
 }
 
 .update-link, .delete-link {
@@ -30,6 +51,160 @@
 
 .cart-product{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 100px 3fr 100px 100px;
+  padding: 50px;
+  background-color: rgb(78, 78, 78);
+  border-radius: 10px;
+  grid-column-start: auto;
+  margin: 10px;
   
 }
+
+.payment-method{
+  /* position: absolute;  */
+  top: 164px; 
+  left: 878px; 
+  width: 352px; 
+  height: 605px; 
+  background: #1E2128FF; /* neutral-800 */
+  border-radius: 12px; /* border-xl */
+  border-width: 1px; 
+  border-color: #FF0000FF; /* primary-500 */
+  border-style: solid; 
+}
+
+.text{
+  /* position: absolute;  */
+  top: 28px; 
+  left: 28px;
+  font-size: 20px; 
+  line-height: 30px; 
+  font-weight: 700; 
+  color: #FFFFFFFF; /* white */
+}
+
+.change-payment-method {
+  top: 74px; 
+  left: 28px; 
+  font-family: Roboto; /* Body */
+  font-size: 12px; 
+  line-height: 20px; 
+  font-weight: 400; 
+  color: #2196F3FF; /* info-500 */
+}
+
+.dielivery-options {
+  /* position: absolute;  */
+  top: 835px; 
+  left: 55px; 
+  width: 807px; 
+  height: 378px; 
+  background: #1E2128FF; /* neutral-800 */
+  border-radius: 4px; /* border-m */
+}
+
+ .section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.payment-method-card {
+  display: grid;
+  grid-template-columns:  1fr 300px 60px;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 20px;}
+  
+  .card-icon {
+    width: 40px;
+    height: 25px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    margin-right: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-details {
+            flex-grow: 1;
+            font-weight: 500;
+        }
+        
+        .change-link {
+            color: #28a745;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .change-link:hover {
+            text-decoration: underline;
+        }
+        
+        
+        .summary-box {
+          border-color: #28a745;
+            background-color: #1E2128FF;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .total-row {
+            font-weight: 600;
+            font-size: 18px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .proceed-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #a14040;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        
+        .proceed-btn:hover {
+            background-color: #c93333;
+        }
+        
+        .made-with {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .heart {
+            color: #ff4757;
+        }
+        
+        @media (max-width: 480px) {
+            .payment-container {
+                padding: 20px 15px;
+            }
+            
+            .voucher-section {
+                flex-wrap: wrap;
+            }
+            
+            .apply-btn {
+                width: 100%;
+                margin-top: 8px;
+            }
+        }
