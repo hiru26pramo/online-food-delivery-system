@@ -5,6 +5,19 @@
   align-items: center;
   margin-bottom: 10px;
 }
+.pizza2{
+  padding-top: 150px;
+}
+
+.rice_image_box{
+  height: 300px;
+  
+  flex-direction: column;
+  column-gap:10px ;
+
+  
+}
+
 
 .body{
   background-color: black;
@@ -20,6 +33,8 @@
  justify-content: center;
  margin-left: 400px;
 }
+
+
 .background_image_box{
   position: relative;
   height: 500px;         /* Set a fixed height */
@@ -70,7 +85,7 @@ transition:  color 0.75s ease-out, font-size 0.75s ease-out ;
 .background_image{
  
   left: 0;
-  width: 100vw;
+  width: 100px;
   height: 500px;
   object-fit: cover;
 
@@ -116,27 +131,41 @@ transition:  color 0.75s ease-out, font-size 0.75s ease-out ;
 }
 
 .button:hover{
-  background-color: red;
+  background-color: rgb(255, 0, 0);
   color: white;
   /*width:120px;
   height: 50px;*/
   transform: scale(1.2);
+  
 }
 
 .image_container{
   display:flex;
   flex-direction: row;
-  gap: 50px;
+  gap: 30px;
   
 }
 
 
 
 .pizza_images{
-  height: 500px;
+  height: 308px;
+  border-radius: 100px;
+
   
-  
-  
+}
+
+.drink_images{
+  height: 308px;
+  display: flex;
+  padding-top: 100px;
+}
+
+.rice_images{
+  height: 205px;
+  border-radius: 7px;
+  padding-top: 0px;
+ 
 }
 
 .pizza_image_box{
@@ -144,6 +173,8 @@ transition:  color 0.75s ease-out, font-size 0.75s ease-out ;
   display: flex;
   flex-direction: column;
   column-gap:10px ;
+
+  
  /* position: relative; this is written
   height: 500px;         /* Set a fixed height 
   width: 100vw;          /* Match the image width 
@@ -155,7 +186,7 @@ transition:  color 0.75s ease-out, font-size 0.75s ease-out ;
 .pizza_name{
   color: white;
   font-size: 20px;
-  margin-left:70px ;
+  margin-right:10px ;
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
@@ -179,7 +210,9 @@ transition:  color 0.75s ease-out, font-size 0.75s ease-out ;
 }
 
   .order_button_box{
-    margin-left: 150px;
+  
+    margin-left: 100px;
+
     position: relative;
     justify-content: center;
     align-items: center;
@@ -210,6 +243,177 @@ transition:  color 0.75s ease-out, font-size 0.75s ease-out ;
 
 
 
+/* ===== RESPONSIVE ADDITIONS ===== */
+/* Mobile (up to 767px) */
 
 
+/* Tablet (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .background_image_box,
+  .background_image {
+    height: 350px;
+  }
+
+  .buttons {
+    gap: 40px;
+  }
+
+  .image_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 0 20px;
+  }
+
+
+  .drink_images{
+    height: 250px;
+  }
+
+  .pizza_images {
+    height: 400px;
+  }
+}
+
+/* Desktop (1024px and up) - Your original styles remain unchanged */
+/* ===== ENHANCED RESPONSIVE ADDITIONS ===== */
+/* Mobile (up to 479px) - Small Phones */
+@media (max-width: 479px) {
+  .background_image_box,
+  .background_image {
+    height: 200px;
+  }
+  
+  .dots {
+    bottom: 5px;
+  }
+  
+  .dot_image {
+    height: 20px;
+  }
+  
+  .buttons {
+    gap: 10px;
+    padding: 5px 10px;
+  }
+  
+  .button {
+    width: 70px;
+    height: 30px;
+    font-size: 12px;
+  }
+  
+  .pizza_images {
+    height: 150px;
+  }
+  
+  .order_button {
+    width: 80px;
+    height: 30px;
+    font-size: 12px;
+  }
+}
+
+/* Mobile (480px to 767px) - Larger Phones */
+@media (min-width: 200px) and (max-width: 767px) {
+  .background_image_box,
+  .background_image {
+    height: 250px;
+  }
+  
+  .buttons {
+    gap: 15px;
+    
+  }
+  
+  .pizza_images {
+    height: 118px;
+  }
+  .order_button {
+    width: 80px;
+    height: 30px;
+    font-size: 12px;
+  }
+  .order_button_box{
+  
+    margin-left: 10px;
+
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+}
+
+/* Tablet (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .background_image_box,
+  .background_image {
+    height: 350px;
+  }
+  
+  .buttons {
+    gap: 60px;
+    padding: 0 30px;
+  }
+  
+  .image_container {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+    gap: 30px;
+    padding: 0 30px;
+  }
+  
+  .pizza_images {
+    height: 300px;
+    
+  }
+
+
+  
+  
+  .order_button_box {
+    margin-left: 50px;
+    
+    
+  }
+  .pizza_name{
+  color: white;
+  font-size: 20px;
+  margin-right:10px ;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  justify-content: center;
+}
+}
+
+/* Small Desktop (1024px to 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .background_image_box,
+  .background_image {
+    height: 400px;
+  }
+  
+  .buttons {
+    gap: 100px;
+  }
+  
+  .image_container {
+    gap: 40px;
+  }
+  
+  .pizza_images {
+    height: 350px;
+  }
+  
+  .order_button_box {
+    margin-left: 80px;
+  }
+}
+
+
+
+
+/* Large Desktop (1280px and up) - Your original styles apply */
 
