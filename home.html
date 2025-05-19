@@ -22,6 +22,7 @@
     padding-left: 3rem; /* Adjust to shift right */
     height: 100vh;
     color: white;
+    padding-right: 1rem;
     }
     body{
       background-color: rgb(2, 1, 1);
@@ -35,8 +36,20 @@
   height: 100vh;
      
     }
+    #about-us{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 3rem;
+    color: white;
     
-    
+    }
+    i{
+     
+      font-size:x-small;
+    }
+
   </style>
 
 
@@ -59,7 +72,7 @@
             <a class="nav-link" href="#">Contact Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About us</a>
+            <a class="nav-link" href="#" onclick="scrollToSection('about-us')">About us</a>
           </li>
         </ul>
       </div>
@@ -75,6 +88,51 @@
     </p>
     <button type="button" class="btn btn-secondary btn-lg">CHECK OUR MENU</button>
   </div>
+ <div id="about-us">
+  <h2>About Us</h2>
+  <br>
+<form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address :</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+
+
+  <div class="mb-3">
+    <label for="message" class="form-label">Your Message :</label>
+    <textarea 
+      class="form-control" 
+      id="message" 
+      rows="6"
+      cols="89" 
+      placeholder="Type your message here. You can write multiple paragraphs.">
+    </textarea>
+  </div>
+
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <div class="shop-info mb-4">
+  
+  <address class="not-italic text-sm text-gray-700">
+    <i>
+    No. 45 Galle Road,<br>
+    Matara 81000,<br>
+    Southern Province,<br>
+    Sri Lanka,<br>
+  tel : 04177788890</i>
+  </address>
+</div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div> 
+
+       
+
   
   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore consequatur ab sequi totam, excepturi molestias omnis iusto quod? Aperiam eum reiciendis assumenda error vel voluptate aliquam autem architecto? Error, tempore.</p>
 
