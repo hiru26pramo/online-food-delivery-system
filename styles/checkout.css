@@ -1,6 +1,6 @@
 .checkout-body{
   color: white;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('/online-food-delivery-system/images/home-background.jpg' ) center/cover no-repeat fixed  ;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('/images/home-background.jpg' ) center/cover no-repeat fixed  ;
   
   
 }
@@ -110,6 +110,12 @@
     font-weight: 600;
     color: #666;
     margin-bottom: 15px;
+}
+.change-payment-methods{
+  margin-left: 20px;
+  margin-bottom: -12px;
+  color: #28a745;
+
 }
 
 .payment-method-card {
