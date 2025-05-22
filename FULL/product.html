@@ -16,7 +16,7 @@
       <!-- <div id="cart-circle" style="background-color: red;"></div> -->
       <div id="cart-no">0</div>
     </div>
-
+    
     <div class="image_with_dots">
       <div class="background_image_box">
         <img src="/FULL/images/pizza image (2).jpg" class="background_image slide active" alt="pizza">
@@ -31,40 +31,16 @@
     </div>
 
     <div class="buttons">
-      <div class="item_button_box"><button class="button">PIZZA</button></div>
-      <div class="item_button_box"><button class="button">RICE</button></div>
+      <div class="item_button_box" ><button class="button" onclick="location.href='#pizza'" >PIZZA</button></div>
+      <div class="item_button_box"><button class="button" onclick="location.href='#rice'">RICE</button></div>
       <div class="item_button_box"><button class="button">DRINKS</button></div>
       <div class="item_button_box"><button class="button">DESSERTS</button></div>
     </div>
-
-    <div class="pizza1">
+    
+    <div class="pizza1" id="pizza">
       <div class="final_box">
-        <div class="image_container">
-          <div class="pizza_image_box">
-            <img src="/FULL/images/pizza image/BBQ Chicken Pan Medium.jpg" class="pizza_images">
-            <div class="pizza_name">BBQ Chicken Pizza</div>
-            <button class="order_button">Order Now</button>
-          </div>
-          <div class="pizza_image_box">
-            <img src="/FULL/images/pizza image/Butter Chicken Masala Pan.jpg" class="pizza_images">
-            <div class="pizza_name">Butter Chicken Masala Pizza</div>
-            <button class="order_button">Order Now</button>
-          </div>
-          <div class="pizza_image_box">
-            <img src="/FULL/images/pizza image/Cheese Lovers Pan Medium.jpg" class="pizza_images">
-            <div class="pizza_name">Cheese Lovers Pizza</div>
-            <button class="order_button">Order Now</button> 
-          </div>
-          <div class="pizza_image_box">
-            <img src="/FULL/images/pizza image/Chicken Hawaiian Pan Medium.jpg" class="pizza_images">
-            <div class="pizza_name">Chicken Hawaiian Pizza</div>
-            <button class="order_button">Order Now</button>
-          </div>
-          <div class="pizza_image_box">
-            <img src="/FULL/images/pizza image/Chicken Triple Treat Pizza Pan.jpg" class="pizza_images">
-            <div class="pizza_name">Chicken Triple Treat Pizza</div>
-            <button class="order_button">Order Now</button>
-          </div>
+        <div class="image_container js-pizza-product-container">
+        
         </div>
       </div>
     
@@ -72,32 +48,8 @@
 
     <div class="rice1" id="rice">
       <div class="final_box">
-        <div class="image_container">
-          <div class="rice_image_box">
-            <img src="/FULL/images/fried rice/rice1.jpg" class="rice_images">
-            <div class="pizza_name">Chicken Fried Rice</div>
-            <button class="order_button">Order Now</button>
-          </div>
-          <div class="rice_image_box">
-            <img src="/FULL/images/fried rice/rice2.jpg" class="rice_images">
-            <div class="pizza_name">Classic Egg Fried Rice</div>
-            <button class="order_button">Order Now</button>
-          </div>
-          <div class="rice_image_box">
-            <img src="/FULL/images/fried rice/rice3.jpg" class="rice_images">
-            <div class="pizza_name">Classic Seafood Fried Rice</div>
-            <button class="order_button">Order Now</button>
-          </div>
-          <div class="rice_image_box">
-            <img src="/FULL/images/fried rice/rice4.jpg" class="rice_images">
-            <div class="pizza_name">Vegetable Fried Rice</div>
-            <button class="order_button">Order Now</button>
-          </div>
-          <div class="rice_image_box">
-            <img src="/FULL/images/fried rice/rice5.jpg" class="rice_images">
-            <div class="pizza_name">Pork Fried Rice</div>
-            <button class="order_button">Order Now</button>
-          </div>
+        <div class="image_container js-rice-product-container">
+          
         </div>
       </div>
     </div>
@@ -137,7 +89,34 @@
         </div>
         
       <button class="order-btn" id="order-now">Add-To-Cart</button>
+    </div><footer class="footer">
+    <div class="left-side">
+            <h2>CONTACT US</h2>
+        <p>SOMEWHERE IN SOMEWHERE,<br>AHAMAL STREET,<br>COLOMBO 03</p>
+        <p><a href="mailto:pizzahut@gmail.com">pizzahut@gmail.com</a></p>
+        <p>+94 123 456 7890</p>
+        <div class="social-icons">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384053.png" alt="Facebook"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" alt="Instagram"></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384014.png" alt="LinkedIn"></a>
+        </div>
+
     </div>
+        <div class="footer-right">
+        <h1>PIZZA HUT</h1>
+        <div class="footer-links">
+          <a href="#">Home</a>
+          <a href="#">Catalog</a>
+          <a href="#">Orders</a>
+        </div>
+        <div class="footer-bottom">
+          @ Brand, Inc. * <a href="#">Privacy</a> * <a href="#">Terms</a> * <a href="#">Sitemap</a>
+        </div>
+      </div>
+
+
+</footer>
   
 
   <script src="/FULL/scripts/product.js"></script>

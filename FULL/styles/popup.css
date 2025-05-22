@@ -6,7 +6,7 @@ body {
             color: #895701;
         }
         .container {
-            max-width: 400px;
+            max-width: 500px;
             margin: 0 auto;
             background: white;
             padding: 20px;
@@ -18,9 +18,14 @@ body {
             text-align: center;
         }
         .pizza-img {
-            width: 100%;
-            border-radius: 10px;
+            display: flex;
+            padding: 20px 38px 20px 38px;
+            width: 80%;
+            border-radius: 50px;
             margin: 10px 0;
+            justify-items: center;
+            
+            
         }
         .size-options, .toppings, .quantity {
             margin: 15px 0;
