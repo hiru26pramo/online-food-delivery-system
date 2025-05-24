@@ -1,5 +1,6 @@
 /* ===== GENERAL STYLES ===== */
 .body {
+  padding: 0;
   background-color: black;
   margin: 0;
   font-family: Arial, sans-serif;
@@ -125,8 +126,35 @@ html {
   flex-direction: column;
   align-items:flex-start;
   text-align: center;
+  box-shadow: 0 .5rem 1 rem rgb(243, 243, 243);
+  outline: .1 rem solid #000000c5;
+  /* outline-offset: 0.5rem; */
+  background-color: #000000c5;
+  border-radius: 15px;
+  padding: 20px;
+  cursor: pointer;
+
 }
 
+.pizza_image_box:hover, .rice_image_box:hover {
+  outline: 0.1rem solid #ffffff69;
+  outline-offset: 0;
+  
+  
+}
+
+.pizza_image_box:hover .pizza_images, .rice_image_box:hover .rice_images {
+  transform: scale(1.05);
+  transition: transform 0.5s ease;
+}
+.pizza_image_box:hover .pizza_name, .rice_image_box:hover .rice_name {
+  font-size: 23px;
+  transition: color 0.5s ease;
+}
+.pizza_image_box:hover, .rice_image_box:hover {
+  transform: scale(1.05);
+  transition: background-color 0.5s, transform 0.5s;
+}
 
 
 .pizza_images, .rice_images, .drink_images {

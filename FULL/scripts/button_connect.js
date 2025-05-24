@@ -139,3 +139,6 @@ function calculateTotal() {
 function updatePrice() {
   totalPriceElement.textContent = `Rs. ${calculateTotal()}`;
 }
+
+
+
