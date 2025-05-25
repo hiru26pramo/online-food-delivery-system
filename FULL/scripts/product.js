@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-
+  let cart = [];
   let currentSlide = 0;
   const slides = document.querySelectorAll(".background_image_box .slide");
 
@@ -51,22 +51,34 @@ document.addEventListener("DOMContentLoaded", function () {
     `
   });
 
-
   document.querySelector('.js-rice-product-container').
     innerHTML = riceProductsHtml;
+  function updatePrice(quantityValue,product,btn) {  
+    
+    if (btn.dataset.size === 'large') {
+          document.querySelector('.product-price-popup').innerHTML = `Rs. ${(product.priceCents.large * quantityValue / 100).toFixed(2)}`;
+        } else if (btn.dataset.size === 'medium') {
+          document.querySelector('.product-price-popup').innerHTML = `Rs. ${(product.priceCents.medium * quantityValue / 100).toFixed(2)}`;
+        } else if (btn.dataset.size === 'small') {
+          document.querySelector('.product-price-popup').innerHTML = `Rs. ${(product.priceCents.small * quantityValue / 100).toFixed(2)}`;
+        }
+  }
 
-  function sizeButtonsClickHandler() {
+  function sizeButtonsClickHandler(product) {
+    let quantityValue = document.getElementById('quantity');
+    sizeButtons = document.querySelectorAll('.size-btn');
     sizeButtons.forEach((btn) => {
       btn.addEventListener('click', () => {
         sizeButtons.forEach((b) => {
           b.classList.remove('active-btn');
         });
         btn.classList.add('active-btn');
+        updatePrice(parseInt(quantityValue.textContent), product, btn);
       });
     });
   }
+  
 
-  let sizeButtons = document.querySelectorAll('.size-btn');
   let topupContainer = document.querySelector('.topup-container');
 
   function createTopupHTML() {
@@ -75,21 +87,17 @@ document.addEventListener("DOMContentLoaded", function () {
       button.addEventListener('click', ()=>{
         topupContainer.style.display = 'flex';
         let product = JSON.parse(button.dataset.product);
-        let productImage = product.image;
-        let productName = product.name;
-        let productPrice = (product.priceCents.medium / 100).toFixed(2);
-        let productDescription = product.description;
 
         topupContainer.innerHTML = `
           <div class="topup-content active">
             <i class="fas fa-times"></i>
-            <div class="product-name">${productName}</div>
+            <div class="product-name">${product.name}</div>
             <div class="product-image">
-              <img src="${productImage}" alt="">
+              <img src="${product.image}" alt="">
             </div>
-            <div class="product-price">Rs. ${productPrice}</div>
+            <div class="product-price-popup">Rs. ${(product.priceCents.medium / 100).toFixed(2)}</div>
             <div class="product-description">
-              <p>${productDescription}</p>
+              <p>${product.description}</p>
             </div>
             <div class="size-option">
               <h3>Select Size :</h3>
@@ -115,33 +123,82 @@ document.addEventListener("DOMContentLoaded", function () {
           btn.classList.remove('active-btn');
         });
       });
-        sizeButtons = document.querySelectorAll('.size-btn');
-        sizeButtons.forEach((btn)=>{
-          btn.addEventListener('click', ()=>{
-            sizeButtons.forEach((b)=>{
-              b.classList.remove('active-btn');
-            });
-            btn.classList.add('active-btn');
-          });
-        });
+        
 
         let quantityValue = document.getElementById('quantity');
         let increaseBtn = document.getElementById('increase');
         let decreaseBtn = document.getElementById('decrease');
+        let activeSizeBtn = document.querySelector('.size-btn.active-btn');        
 
         increaseBtn.addEventListener('click', ()=>{
           let currentQuantity = parseInt(quantityValue.textContent);
           quantityValue.textContent = currentQuantity + 1;
+          console.log(quantityValue.textContent);
+          sizeButtonsClickHandler(product);
+          updatePrice(quantityValue.textContent, product, activeSizeBtn);  
         });
 
         decreaseBtn.addEventListener('click', ()=>{
           let currentQuantity = parseInt(quantityValue.textContent);
           if(currentQuantity > 1){
             quantityValue.textContent = currentQuantity - 1;
+            console.log(quantityValue.textContent);
+            sizeButtonsClickHandler(product);
+            updatePrice(quantityValue.textContent, product, activeSizeBtn);
           }
         });
+        sizeButtonsClickHandler(product);
 
-      });   
+        document.getElementById('order-now').addEventListener('click', () => {
+          const addedQuantity = parseInt(quantityValue.textContent);
+          const selectedSize = activeSizeBtn.dataset.size;
+          let cartCounter = document.getElementById('cart-no');
+          let currentCount = parseInt(cartCounter.textContent) || 0;
+          cartCounter.textContent = currentCount + addedQuantity;
+
+          let msg = document.createElement('div');
+          msg.className = 'added-msg';
+          msg.textContent = '✅ Added to Cart';
+          msg.style.marginTop = '10px';
+          msg.style.color = 'green';
+          msg.style.fontWeight = 'bold';
+          msg.style.textAlign = 'center';
+
+          document.getElementById('order-now').classList.add('clicked');
+          document.getElementById('order-now').insertAdjacentElement('beforebegin', msg);
+
+          setTimeout(() => {
+            msg.remove();
+            document.getElementById('order-now').classList.remove('clicked');
+            topupContainer.style.display = 'none';
+          }, 2000);
+
+
+          const cartItem = {
+            product: product,
+            quantity: addedQuantity,
+            size: activeSizeBtn.dataset.size,
+            price: product.priceCents[selectedSize]
+          };
+
+          const existingItemIndex = cart.findIndex(item => 
+          item.product.id === cartItem.product.id && 
+          item.size === cartItem.size
+          );
+
+          if (existingItemIndex >= 0) {
+            // Update quantity if item already exists
+            cart[existingItemIndex].quantity += cartItem.quantity;
+          } else {
+            // Add new item if it doesn't exist
+            cart.push(cartItem);
+          }
+
+          console.log('Current Cart:', cart);
+        });
+
+        updatePrice(quantityValue.textContent, product, activeSizeBtn);
+      });
     });
   }
   createTopupHTML();
